@@ -32,3 +32,12 @@ class CSV:
         
         with open('output.json', 'w') as f:
             f.write(json.dumps(json_object, indent=4))
+    
+    def get_all_csv(self):
+        with open(self.path, 'r') as f:
+            reader = csv.DictReader(f)
+            data_list = [row for row in reader]
+        
+        
+        with open('output.json', 'w') as f:
+            f.write(json.dumps(data_list, indent=4))
